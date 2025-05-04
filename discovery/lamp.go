@@ -17,7 +17,7 @@ func NewLampServiceDiscovery(lc *lamp.Client) (sd *LampServiceDiscovery) {
 }
 
 // Watch
-func (sd *LampServiceDiscovery) Watch(ctx context.Context, serviceName, tag string, update func(endpoints []discovery.Endpoint, closed bool)) (close func(), err error) {
+func (sd *LampServiceDiscovery) Watch(ctx context.Context, serviceName, tag string, update func(endpoints []discovery.Endpoint, closed bool)) (cancel func() error, err error) {
 	return sd.lc.WatchWithContext(ctx, serviceName, tag, func(endpoints []lamp.Endpoint, closed bool) {
 		var tmpEndpoints []discovery.Endpoint
 		for _, endpoint := range endpoints {
