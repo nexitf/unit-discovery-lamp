@@ -3,7 +3,7 @@ module github.com/nexitf/unit-discovery-lamp
 go 1.18
 
 require (
-	github.com/nexitf/lamp v0.0.0-20250504105242-89b7c9c7e3e4
+	github.com/nexitf/lamp v0.0.0-20250505035053-20fe6ed400ce
 	github.com/nexitf/unit v0.0.0-20250503050731-1821f951e507
 )
 
